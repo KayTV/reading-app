@@ -28,4 +28,16 @@ router.get('/authors', function(req, res, next) {
   })
 });
 
+router.get('/showpage/:id', function(req, res, next) {
+  books().where('id', req.params.id).first().then(function(book){
+    res.render('showpage', {user: req.user, book: book});
+  });
+})
+
+router.get('/showpageauthor/:id', function(req, res, next) {
+  authors().where('id', req.params.id).first().then(function(author){
+    res.render('showpageauthor', {user: req.user, author: author});
+  });
+})
+
 module.exports = router;

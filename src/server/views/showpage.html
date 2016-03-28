@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+    <header>
+      <h1>{{book.title}}</h1>
+    </header>
+    <div class="col-xs-6">
+      <img src="{{book.cover_url}}">
+    </div>
+    <div class="col-xs-6" style="text-shadow: 1px 1px white;">
+      <h4>Genre: {{book.genre}}</h4>
+      <h4>{{book.description}}</h4>
+      <form method="post">
+        <button class="btn btn-md">Edit Book</button>
+        <button class="btn btn-md">Delete Book</button>
+      </form>
+    </div>
+
+  </div>
+
+{% endblock %}
