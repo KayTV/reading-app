@@ -9,16 +9,16 @@
 
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
-    <div style="height: 100%">
-      <div class="col-xs-2">
+
+      <div class="col-xs-2 sidenav">
         <ul>
           <li>Books</li>
           <li>Authors</li>
         </ul>
       </div>
-    </div>
+
     {% for book in books %}
-    <div style="width: 100%; height: 500px">
+    <div class="displaybox">
       <div class="col-xs-4">
        <img src="{{book.cover_url}}" style="height: 75%; width: 75%">
       </div>

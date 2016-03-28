@@ -25,3 +25,22 @@ body {
   color: #fff !important;
   background-color:#29292c !important;
 }
+
+.sidenav {
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  border: 1px black solid;
+  display: block;
+}
+
+.displaybox {
+  width: 800px;
+  height: 300px;
+  margin-left: 300px;
+  margin-bottom: 10px;
+  border: 1px red solid;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: scroll;
+}
