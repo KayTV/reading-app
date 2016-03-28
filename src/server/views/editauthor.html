@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+    <header>
+      <h1>Edit: {{author.first_name}} {{author.last_name}}</h1>
+    </header>
+    <form method="post">
+      <label for="text">First Name: </label>
+        <input type="text" required maxlength="40" name="first_name" value="{{author.first_name}}"></input><br>
+      <label for="text">Last Name: </label>
+        <input type="text" required maxlength="40" name="last_name" value="{{author.last_name}}"></input><br>
+      <label for="text">Image: </label>
+        <input type="text" required maxlength="40" name="image_url" value="{{author.image_url}}"></input><br>
+      <p><strong>Biography:</strong></p>
+        <textarea rows="10" cols="50" name="biography">{{author.biography}}</textarea><br>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+      <a href="/" class="btn btn-danger">Cancel</a>
+    </form>
+
+  </div>
+
+{% endblock %}

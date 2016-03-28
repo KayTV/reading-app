@@ -7,18 +7,17 @@
 
   <div class="container">
     <header>
-      <h1>Edit: {{book.title}}</h1>
+      <h1>{{title}}</h1>
     </header>
     <form method="post">
       <label for="text">Title: </label>
-        <input type="text" required maxlength="40" name="title" value="{{book.title}}"></input><br>
+        <input type="text" required maxlength="40" name="title"></input><br>
       <label for="text">Genre: </label>
-        <input type="text" required maxlength="40" name="genre" value="{{book.genre}}"></input><br>
+        <input type="text" required maxlength="40" name="genre"></input><br>
       <label for="text">Image: </label>
-        <input type="text" required maxlength="40" name="cover_url" value="{{book.cover_url}}"></input><br>
+        <input type="text" required maxlength="40" name="cover_url"></input><br>
       <p><strong>Details:</strong></p>
-        <textarea rows="10" cols="50" placeholder="Description" name="description">{{book.description}}</textarea><br>
-
+        <textarea rows="10" cols="50" placeholder="Description" name="description"></textarea><br>
       <button type="submit" class="btn btn-success" id="submit_form">Submit</button>
       <a href="/" class="btn btn-danger" id="cancel_form"> Cancel</a>
     </form>

@@ -12,11 +12,11 @@
     <div class="col-xs-6">
       <img src="{{author.image_url}}">
     </div>
-    <div class="col-xs-6" style="text-shadow: 1px 1px white;">
+    <div class="col-xs-6">
       <h4>{{author.biography}}</h4>
       <form method="post">
-        <button class="btn btn-md">Edit Author</button>
-        <button class="btn btn-md">Delete Author</button>
+        <a href="/editauthor/{{author.id}}" class="btn btn-primary">Edit Author</a>
+        <button class="btn btn-danger">Delete Author</button>
       </form>
     </div>
 
