@@ -3,6 +3,24 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.navbar {
+  margin-bottom: 0;
+  background-color: #ab2627;
+  border: 0;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: black !important;
+}
+
+.navbar-nav li a:hover {
+  color: #4d79ff !important;
+}
+
+.navbar-nav li.active a {
+  color: #fff !important;
+  background-color:#29292c !important;
 }
