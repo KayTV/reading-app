@@ -15,11 +15,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/books', function(req, res, next) {
-  res.render('books', { title: 'Galvanize Reads: Books' });
+  books().select()
+  .then(function(books){
+    res.render('books', { books: books , title: 'Galvanize Reads: Books' });
+  })
 });
 
 router.get('/authors', function(req, res, next) {
-  res.render('authors', { title: 'Galvanize Reads: Authors' });
+  authors().select()
+  .then(function(authors){
+    res.render('authors', { authors: authors, title: 'Galvanize Reads: Authors' });
+  })
 });
 
 module.exports = router;
