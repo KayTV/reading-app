@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    <div class="col-xs-6">
+      <button>
+        <img src="http://www.shejustwrites.net/wp-content/uploads/2015/10/Book-stack.png" style="height: 50%; width: 50%;">
+        <h3>Books</h3>
+      </button>
+    </div>
+    <div class="col-xs-6">
+      <button>
+        <img src="http://azbookdoctor.com/wp-content/uploads/2015/07/ClipArtSnoopyTyping.jpg">
+        <h3>Authors</h3>
+      </button>
+    </div>
+
+  </div>
+
+{% endblock %}
