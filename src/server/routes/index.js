@@ -8,6 +8,10 @@ function books() {
   return knex('books');
 }
 
+function both() {
+  return knex('books')
+  .join('author', 'author.id', 'author_one');
+}
 
 
 router.get('/', function(req, res, next) {
@@ -19,7 +23,7 @@ router.get('/addbook', function(req, res, next) {
 });
 
 router.get('/books', function(req, res, next) {
-  books().select()
+  both().select()
   .then(function(books){
     res.render('books', { books: books , title: 'Galvanize Reads: Books' });
   })
@@ -33,7 +37,8 @@ router.get('/authors', function(req, res, next) {
 });
 
 router.get('/showpage/:id', function(req, res, next) {
-  books().where('id', req.params.id).first().then(function(book){
+  books().where('id', req.params.id).first()
+  .then(function(book){
     res.render('showpage', {user: req.user, book: book});
   });
 })
