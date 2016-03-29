@@ -185,4 +185,18 @@ router.post('/editauthor/:id', function(req, res, next) {
   })
 })
 
+router.post('/showpage/:id', function(req, res, next){
+  console.log('delete');
+  both2().where('id', req.params.id).del().then(function(result){
+    res.redirect('/books')
+  });
+});
+
+router.post('/showpageauthor/:id', function(req, res, next){
+  console.log('delete');
+  authors().where('id', req.params.id).del().then(function(result){
+    res.redirect('/author')
+  });
+});
+
 module.exports = router;
