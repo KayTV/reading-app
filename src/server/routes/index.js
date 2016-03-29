@@ -8,9 +8,9 @@ function books() {
   return knex('books');
 }
 
-function both() {
-  return knex('books')
-  .join('author', 'author.id', 'author_one');
+function both2() {
+  return knex('author')
+  .join('books', 'author.id', 'books.id');
 }
 
 
@@ -22,8 +22,27 @@ router.get('/addbook', function(req, res, next) {
   res.render('addbook', { title: 'Galvanize Reads: Add Book' });
 });
 
+router.post('/addbook', function(req, res, next) {
+  authors().insert({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    image_url: req.body.image_url,
+    biography: req.body.biography
+  }, 'id').then(function(id){
+    books().insert({
+      title: req.body.title,
+      genre: req.body.genre,
+      cover_url: req.body.cover_url,
+      description: req.body.description,
+      author_one: +id
+    }, 'id').then(function(result){
+      res.redirect('/')
+    })
+  })
+});
+
 router.get('/books', function(req, res, next) {
-  both().select()
+  both2().select()
   .then(function(books){
     res.render('books', { books: books , title: 'Galvanize Reads: Books' });
   })
@@ -37,7 +56,7 @@ router.get('/authors', function(req, res, next) {
 });
 
 router.get('/showpage/:id', function(req, res, next) {
-  books().where('id', req.params.id).first()
+  both2().where('author.id', req.params.id).first()
   .then(function(book){
     res.render('showpage', {user: req.user, book: book});
   });

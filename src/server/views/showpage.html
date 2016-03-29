@@ -14,6 +14,7 @@
     </div>
     <div class="col-xs-6">
       <h4>Genre: {{book.genre}}</h4>
+      <h4>Author: {{book.first_name}} {{book.last_name}}</h4>
       <h4>{{book.description}}</h4>
       <form method="post">
         <a href="/editbook/{{book.id}}" class="btn btn-primary">Edit Book</a>

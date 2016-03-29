@@ -11,13 +11,21 @@
     </header>
     <form method="post">
       <label for="text">Title: </label>
-        <input type="text" required maxlength="40" name="title"></input><br>
+        <input type="text"  name="title"></input><br>
       <label for="text">Genre: </label>
-        <input type="text" required maxlength="40" name="genre"></input><br>
+        <input type="text"  name="genre"></input><br>
       <label for="text">Image: </label>
-        <input type="text" required maxlength="40" name="cover_url"></input><br>
-      <p><strong>Details:</strong></p>
+        <input type="text" name="cover_url"></input><br>
+      <p><strong>Details of Book:</strong></p>
         <textarea rows="10" cols="50" placeholder="Description" name="description"></textarea><br>
+      <label for="text">Authors First Name: </label>
+        <input type="text" name="first_name"></input><br>
+      <label for="text">Autors Last Name: </label>
+        <input type="text" name="last_name"></input><br>
+      <label for="text">Authors Image: </label>
+        <input type="text"  name="image_url"></input><br>
+      <p><strong>Bio of Author:</strong></p>
+        <textarea rows="10" cols="50" placeholder="Biography" name="biography"></textarea><br>
       <button type="submit" class="btn btn-success" id="submit_form">Submit</button>
       <a href="/" class="btn btn-danger" id="cancel_form"> Cancel</a>
     </form>
