@@ -15,6 +15,18 @@
           <li>Books</li>
           <li>Authors</li>
         </ul>
+        <select class="form-control" name="#" id="address_data">
+         <option value="">N/A</option>
+         {% for book in books %}
+         <option value="{{book.genre}}">
+           {{book.genre}}
+         </option>
+         {% endfor %}
+       </select><br>
+       <div class="form-group">
+         <label for="text">Title: </label>
+         <input type="text" name="title" class="form-control" placeholder="Book Title"></input><br>
+       </div>
       </div>
 
     {% for book in books %}

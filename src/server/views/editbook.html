@@ -11,11 +11,11 @@
     </header>
     <form method="post">
       <label for="text">Title: </label>
-        <input type="text" required maxlength="40" name="title" value="{{book.title}}"></input><br>
+        <input type="text" name="title" value="{{book.title}}"></input><br>
       <label for="text">Genre: </label>
-        <input type="text" required maxlength="40" name="genre" value="{{book.genre}}"></input><br>
+        <input type="text" name="genre" value="{{book.genre}}"></input><br>
       <label for="text">Image: </label>
-        <input type="text" required maxlength="40" name="cover_url" value="{{book.cover_url}}"></input><br>
+        <input type="text" name="cover_url" value="{{book.cover_url}}"></input><br>
       <p><strong>Details:</strong></p>
         <textarea rows="10" cols="50" placeholder="Description" name="description">{{book.description}}</textarea><br>
 
