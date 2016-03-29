@@ -82,6 +82,17 @@ router.get('/editbook/:id', function(req, res, next) {
     });
 });
 
+router.post('/editbook/:id', function(req, res, next) {
+  books().where('id', req.params.id).update(req.body)
+  .then(function() {
+    res.status(200);
+    res.redirect('/showpage/'+req.params.id);
+  })
+  .catch(function (error) {
+    return next(err);
+  })
+})
+
 router.get('/editauthor/:id', function(req, res, next) {
   authors().where('id', req.params.id)
     .then(function (author) {
@@ -95,5 +106,16 @@ router.get('/editauthor/:id', function(req, res, next) {
       return next(err);
     });
 });
+
+router.post('/editauthor/:id', function(req, res, next) {
+  authors().where('id', req.params.id).update(req.body)
+  .then(function() {
+    res.status(200);
+    res.redirect('/showpageauthor/'+req.params.id);
+  })
+  .catch(function (error) {
+    return next(err);
+  })
+})
 
 module.exports = router;
