@@ -17,11 +17,11 @@ function both2() {
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Galvanize Reads' });
+  res.render('index', { user: req.user, title: 'Galvanize Reads' });
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Marketing' });
+  res.render('login', { user: req.user, title: 'Marketing' });
 });
 
 router.post('/login', function(req, res, next) {
@@ -42,7 +42,7 @@ router.post('/login', function(req, res, next) {
 });
 
 router.get('/signup', function(req, res, next) {
-  res.render('signup', { title: 'Marketing' });
+  res.render('signup', { user: req.user, title: 'Marketing' });
 });
 
 router.post('/signup', function(req, res, next) {
@@ -86,7 +86,7 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.get('/addbook', function(req, res, next) {
-  res.render('addbook', { title: 'Galvanize Reads: Add Book' });
+  res.render('addbook', { user: req.user, title: 'Galvanize Reads: Add Book' });
 });
 
 router.post('/addbook', function(req, res, next) {
@@ -111,14 +111,14 @@ router.post('/addbook', function(req, res, next) {
 router.get('/books', function(req, res, next) {
   both2().select()
   .then(function(books){
-    res.render('books', { books: books , title: 'Galvanize Reads: Books' });
+    res.render('books', { user: req.user, books: books , title: 'Galvanize Reads: Books' });
   })
 });
 
 router.get('/authors', function(req, res, next) {
   authors().select()
   .then(function(authors){
-    res.render('authors', { authors: authors, title: 'Galvanize Reads: Authors' });
+    res.render('authors', { user: req.user, authors: authors, title: 'Galvanize Reads: Authors' });
   })
 });
 
